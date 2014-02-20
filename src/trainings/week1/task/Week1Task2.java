@@ -3,10 +3,16 @@ package trainings.week1.task;
 public class Week1Task2 {
 
    final private int TEN = 10;
+   
+   public static void main(String[] args){
+        Week1Task2 testObject = new Week1Task2();
+		System.out.println(testObject.getTheLargest(1,2,5));  
+		System.out.println(testObject.getTheLargest(1,2,5));
+   }
 
 //1Метод возвращает самое большое из чесил a,b и c
     public int getTheLargest(int a, int b, int c){
-        return 0;
+        return 3;
     }
 
 //2Метод проверяет равны ли числа a и b
