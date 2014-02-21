@@ -1,8 +1,7 @@
-
+package trainings.week1.task;
 
 import java.io.IOException;
 import java.util.Scanner;
-
 import static java.lang.Math.pow;
 
 
