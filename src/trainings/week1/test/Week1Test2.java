@@ -2,6 +2,7 @@ package trainings.week1.test;
 
 import junit.framework.Assert;
 import org.junit.Test;
+import trainings.week1.task.Week1Task1;
 
 public class Week1Test2 {
 
