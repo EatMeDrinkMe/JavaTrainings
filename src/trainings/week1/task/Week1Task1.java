@@ -149,18 +149,6 @@ public class Week1Task1 {
         return sum;
     }
 /*    public int [] getNegativeArray(int[] array){
-        int i=0;
-        int j=0;
-
-
-
-            for (i = 0; i < array.length; i++){
-                if (array [i]<0){
-                array[j]=array[i];
-                j++;
-
-            }
-                System.out.println(array);
 
             }
     return array;
