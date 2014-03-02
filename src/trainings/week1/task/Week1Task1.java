@@ -10,7 +10,6 @@ public class Week1Task1 {
         if (c > max){
             max = c;
         }
-        System.out.println(max);
         return max;
     }
 
@@ -19,145 +18,118 @@ public class Week1Task1 {
         switch(operator){
             case '+':
                 res = a+b;
-                System.out.println("a + b = "+res);
                 break;
             case  '-':
                 res = a-b;
-                System.out.println("a - b = " + res);
                 break;
             case '*':
                 res = a*b;
-                System.out.println("a * b = "+res);
                 break;
             case '/':
+                if(b == 0){
+                    System.out.println("Dividing by zero error!");
+                    return -1;
+                }
                 res = a/b;
-                System.out.println("a / b = "+ res);
                 break;
-
         }
-    return res;
+        return res;
     }
 
     public static boolean isEquals(double a, double b){
-        boolean res = false;
-
-        if (a==b) res = true;
-
-        if (a!=b) res = false;
-        System.out.println(res);
-        return res;
-
-
+        return a == b;
     }
 
     public int increment(int a) {
-        a=a+1;
-        System.out.println("new a = "+a);
-        return a;
+        return ++a;
     }
+
     public double square(int radius){
-        double S;
-        S = PI * radius * radius;
-        System.out.println("square = "+S);
-        return S;
+        return PI * radius * radius;
     }
 
     public boolean isEven(int a){
-        boolean x;
-
-        if (a %2 == 0){
-            x = true;
-            System.out.println("number "+ a + " %2 == 0 ---" + x);
-        }
-        else {
-            x = false;
-            System.out.println("number " + a + " %2 != 0 ---"+ x);
-        }
-        return x;
+        return a %2 == 0;
     }
 
     public int divideBy2(int a){
-        if (a%2 == 0){
-        a = a/2;
-        System.out.println("a = " +a);
-        }
-        else System.out.println("division is not performed");
-        return a;
+        return a/2;
     }
 
     public String sayHello(String someGuy){
-        String saidHello = "Hey, "+someGuy+"!";
-        System.out.println(saidHello);
-        return saidHello;
+        return "Hey, "+someGuy+"!";
     }
+
     public String yearsOld(String name, int currentYear, int yearOfBorn){
-        String answer = name +" "+ (currentYear - yearOfBorn) + " years";
-        System.out.println(answer);
-        return answer;
+        return name +" "+ (currentYear - yearOfBorn) + " years";
     }
+
     public int getIndexOf(String searchString, char symbol){
-        int St;
-        St = searchString.length();
-        int num = searchString.lastIndexOf(symbol);
-        System.out.println(num);
-        return num;
+        return searchString.indexOf(symbol);
     }
+
     public double getPension(int year, double salary){
-        double pens = 0;
+        double pension = 0;
 
         if (year < 6){
-            pens = salary * 0.7;
-            System.out.println("Vasha zarplata "+salary+"*0.9 = "+pens);
+            pension = salary * 0.7;
+        } else if ( 6 <= year && year < 11){
+            pension = salary * 0.8;
+        } else if (11 <= year && year < 16){
+            pension = salary * 0.9;
+        } else {
+            pension = salary * 0.95;
         }
-        else if (6<year){
-            if(year<11){
-                pens = salary * 0.8;
-                System.out.println("Vasha zarplata "+salary+"*0.9 = "+pens);
-            }
-            else if (11<year){
-                if(year<16){
-                    pens = salary * 0.9;
-                    System.out.println("Vasha zarplata "+salary+"*0.9 = "+pens);
-                }
-                else if (15 < year){
-                    pens = salary * 0.95;
-                    System.out.println("Vasha zarplata "+salary+"*0.95 = "+pens);
-                }
-            }
-        }
-        else ;
-        return pens;
+
+        return pension;
     }
+
     public int getTheLargestElement(int[] array){
-        int max =array[0];
-        int i;
-        for (i=0; i< array.length; i++){
-        if (array[i++]>max) max = array [i++];
+        int max = array[0];
+        for (int i = 1; i < array.length; i++){
+            if(array[i] > max){
+                max = array[i];
+            }
         }
-        System.out.println(max);
         return max;
     }
+
     public int getEvenSum(int[] array){
-        int sum=0;
-        int i;
-        for (i = 0; i < array.length; i ++){
-            if (array [i]%2==0){
+        int sum = 0;
+        for (int i = 0; i < array.length; i++){
+            if (array[i] % 2 == 0){
                 sum = sum + array[i];
             }
         }
-        System.out.println(sum);
         return sum;
     }
-/*    public int [] getNegativeArray(int[] array){
 
+    public int [] getNegativeArray(int[] array){
+        int negativeCount = 0;
+
+        for(int element: array){
+            if(element < 0) negativeCount++;
+        }
+
+        int[] resultArray = new int[negativeCount];
+        for(int i = 0, j = 0; i < array.length; i++){
+            if(array[i] < 0){
+                resultArray[j] = array[i];
+                j++;
             }
-    return array;
+        }
 
-    }/*
+        return resultArray;
+    }
+
+
     public boolean isInArray(String [] array, String searchString){
-
-
-    return false;
-    }*/
+        for(String element: array){
+            if(element.equals(searchString)){
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
